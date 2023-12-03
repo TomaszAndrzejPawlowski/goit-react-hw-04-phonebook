@@ -10,7 +10,6 @@ export const App = () => {
   const {
     contacts,
     filter,
-    addContact,
     handleFilter,
     getContacts,
     deleteContact,
@@ -20,11 +19,11 @@ export const App = () => {
 
   useEffect(() => {
     getContactsFromLocalStorage();
-  }, []);
+  }, [getContactsFromLocalStorage]);
 
   useEffect(() => {
     updateLocalStorage();
-  }, [contacts]);
+  }, [contacts, updateLocalStorage]);
 
   return (
     <div className={css.container}>
