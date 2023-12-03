@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from 'react';
 
 export const ContactsContext = createContext();
 
@@ -74,6 +75,10 @@ export const ContactsProvider = ({ children }) => {
     setName('');
     setNumber('');
   };
+
+  useEffect(() => {
+    getContactsFromLocalStorage();
+  }, []);
 
   return (
     <ContactsContext.Provider
