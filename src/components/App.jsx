@@ -3,16 +3,8 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { v4 as uuidv4 } from 'uuid';
 import css from './App.module.css';
-// import { useEffect } from 'react';
-// import { useContactsContext } from './ContactsContext/ContactsContext';
 
 export const App = () => {
-  // const { getContactsFromLocalStorage } = useContactsContext();
-
-  // useEffect(() => {
-  //   getContactsFromLocalStorage();
-  // }, []);
-
   return (
     <div className={css.container}>
       <h1 className={css.titles}>Phonebook</h1>
