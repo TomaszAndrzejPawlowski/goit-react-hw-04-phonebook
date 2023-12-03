@@ -7,31 +7,18 @@ import { useEffect } from 'react';
 import { useContactsContext } from './ContactsContext/ContactsContext';
 
 export const App = () => {
-  const {
-    contacts,
-    filter,
-    handleFilter,
-    getContacts,
-    deleteContact,
-    getContactsFromLocalStorage,
-    updateLocalStorage,
-  } = useContactsContext();
-
+  const { getContactsFromLocalStorage } = useContactsContext();
   useEffect(() => {
     getContactsFromLocalStorage();
-  }, [getContactsFromLocalStorage]);
-
-  useEffect(() => {
-    updateLocalStorage();
-  }, [contacts, updateLocalStorage]);
+  }, []);
 
   return (
     <div className={css.container}>
       <h1 className={css.titles}>Phonebook</h1>
       <ContactForm generateId={uuidv4()} />
       <h2 className={css.titles}>Contacts</h2>
-      <Filter value={filter} onChange={handleFilter} />
-      <ContactList contacts={getContacts} onDeleteContact={deleteContact} />
+      <Filter />
+      <ContactList />
     </div>
   );
 };
