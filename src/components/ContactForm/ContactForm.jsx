@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import css from './ContactForm.module.css';
 import { useContactsContext } from 'components/ContactsContext/ContactsContext';
